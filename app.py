@@ -14,7 +14,7 @@ model = pickle.load(open('breast_cancer_detector.pickle', 'rb'))
 def home():
     return render_template('index.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/',methods=['POST'])
 def predict():
     input_features = [float(x) for x in request.form.values()]
     features_value = [np.array(input_features)]
